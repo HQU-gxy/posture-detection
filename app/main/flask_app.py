@@ -14,6 +14,7 @@ from app.utils import ColoredLevelFormatter, NoANSIFormatter, MyJSONEncoder
 from app.models.base import db
 from app.api.user import api as user_api
 from app.api.auth import bp as auth_bp
+from app.api.video import api as video_api
 
 # start_listen_serial 必须在 导入models后才能导入
 
@@ -162,6 +163,7 @@ def create_app(test_config=None):
   # router
   app.register_blueprint(user_api)
   app.register_blueprint(auth_bp)
+  app.register_blueprint(video_api)
 
   return app
 
